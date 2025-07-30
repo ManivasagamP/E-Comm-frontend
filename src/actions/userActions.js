@@ -70,6 +70,7 @@ export const register = (userData) => async (dispatch) => {
         }
 
         const { data }  = await axios.post(`/api/v1/register`,userData, config);
+        console.log("data >>>", data)
         dispatch(registerSuccess(data))
     } catch (error) {
         dispatch(registerFail(error.response.data.message))
